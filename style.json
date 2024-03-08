@@ -1,0 +1,892 @@
+{
+    "version": 8,
+    "name": "Co2 emission and airport",
+    "metadata": {
+        "mapbox:sdk-support": {
+            "js": "0.46.0",
+            "android": "6.0.0",
+            "ios": "4.0.0"
+        },
+        "mapbox:trackposition": true,
+        "mapbox:groups": {
+            "ff17256373335e325f60d69e1b730463": {
+                "name": "Borders",
+                "collapsed": true
+            },
+            "3a0aa18c08026c58ff3884e256c49a15": {
+                "name": "Water",
+                "collapsed": true
+            },
+            "5dcb45d90f3a834241309aec99041e69": {
+                "name": "Water label",
+                "collapsed": true
+            },
+            "998c1d99148db5c32faa4352d198236b": {
+                "name": "Country labels",
+                "collapsed": false
+            },
+            "0deb8e0da15c00cad0f450c7f8fbad61": {
+                "name": "Donuts",
+                "collapsed": false
+            },
+            "74ba82f7974afdb25dac0eb0aa816471": {
+                "name": "HPI_Patterns",
+                "collapsed": false
+            }
+        },
+        "mapbox:autocomposite": true,
+        "mapbox:thumb": "data:image/webp;base64,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",
+        "mapbox:uiParadigm": "layers"
+    },
+    "center": [-1.7525834762117256, 1.6381485087301115],
+    "zoom": 1.0334216883254188,
+    "bearing": 0,
+    "pitch": 0,
+    "light": {"color": "hsl(0, 0%, 100%)"},
+    "sources": {
+        "composite": {
+            "url": "mapbox://mapbox.mapbox-streets-v8,mapbox.0ew8g34e,yixiaozhao.bw3sffb1,yixiaozhao.41ynuv17",
+            "type": "vector"
+        }
+    },
+    "sprite": "mapbox://sprites/yixiaozhao/clth21vsi00xb01oi4gdecveq/bttaalrgoacgczeybqqghplew",
+    "glyphs": "mapbox://fonts/yixiaozhao/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "layout": {},
+            "paint": {
+                "background-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    "hsl(170, 43%, 63%)",
+                    22,
+                    "hsl(170, 43%, 63%)"
+                ]
+            }
+        },
+        {
+            "id": "HappyPlanetRank",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "HPI_2016_new-7yglcq",
+            "minzoom": 2,
+            "filter": ["has", "HPI_HPI Rank"],
+            "layout": {"visibility": "none"},
+            "paint": {
+                "fill-outline-color": "hsla(0, 0%, 0%, 0)",
+                "fill-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    [
+                        "interpolate",
+                        ["exponential", 1],
+                        ["get", "HPI_HPI Rank"],
+                        1,
+                        "hsl(358, 100%, 67%)",
+                        55,
+                        "hsl(344, 84%, 80%)",
+                        140,
+                        "hsl(343, 59%, 94%)"
+                    ],
+                    22,
+                    [
+                        "interpolate",
+                        ["exponential", 1],
+                        ["get", "HPI_HPI Rank"],
+                        1,
+                        "hsl(358, 100%, 67%)",
+                        55,
+                        "hsl(344, 84%, 80%)",
+                        140,
+                        "hsl(343, 59%, 94%)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "HappyPlanetRank copy",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "2010-2022_data-b2gbjo",
+            "minzoom": 2,
+            "filter": ["has", "CO2_emissions"],
+            "layout": {"visibility": "none"},
+            "paint": {
+                "fill-outline-color": "hsla(0, 0%, 0%, 0)",
+                "fill-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "CO2_emissions"],
+                        0.034193618,
+                        "hsl(239, 95%, 89%)",
+                        1,
+                        "hsl(0, 94%, 96%)",
+                        9.92,
+                        "hsl(0, 98%, 58%)",
+                        19.81,
+                        "hsl(0, 60%, 33%)",
+                        29.7,
+                        "hsl(0, 90%, 83%)"
+                    ],
+                    10,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "CO2_emissions"],
+                        0.034193618,
+                        "hsl(0, 92%, 22%)",
+                        1,
+                        "hsl(0, 94%, 96%)",
+                        9.92,
+                        "hsl(0, 98%, 58%)",
+                        19.81,
+                        "hsl(0, 60%, 33%)",
+                        29.7,
+                        "hsl(0, 90%, 83%)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "HappyPlanetRank copy 1",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "2010-2022_data-b2gbjo",
+            "minzoom": 2,
+            "filter": ["has", "CO2_emissions"],
+            "layout": {},
+            "paint": {
+                "fill-outline-color": "hsla(0, 0%, 0%, 0)",
+                "fill-color": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "CO2_emissions"],
+                        0.034193618,
+                        "hsl(239, 95%, 89%)",
+                        1,
+                        "hsl(0, 94%, 96%)",
+                        9.92,
+                        "hsl(0, 98%, 58%)",
+                        19.81,
+                        "hsl(0, 60%, 33%)",
+                        29.7,
+                        "hsl(0, 90%, 83%)"
+                    ],
+                    22,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "CO2_emissions"],
+                        0.034193618,
+                        "hsl(0, 92%, 22%)",
+                        1,
+                        "hsl(0, 94%, 96%)",
+                        9.92,
+                        "hsl(0, 98%, 58%)",
+                        19.81,
+                        "hsl(0, 60%, 33%)",
+                        29.7,
+                        "hsl(0, 90%, 83%)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "border-national",
+            "type": "line",
+            "metadata": {"mapbox:group": "ff17256373335e325f60d69e1b730463"},
+            "source": "composite",
+            "source-layer": "admin",
+            "minzoom": 1,
+            "filter": [
+                "all",
+                ["<=", ["get", "admin_level"], 1],
+                ["==", ["get", "admin_level"], 0],
+                ["==", ["get", "disputed"], "false"],
+                ["==", ["get", "maritime"], "false"],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {"line-join": "round", "line-cap": "round"},
+            "paint": {
+                "line-color": "hsl(62, 100%, 54%)",
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    3,
+                    0.5,
+                    10,
+                    2
+                ]
+            }
+        },
+        {
+            "id": "border-national-dispute",
+            "type": "line",
+            "metadata": {"mapbox:group": "ff17256373335e325f60d69e1b730463"},
+            "source": "composite",
+            "source-layer": "admin",
+            "minzoom": 1,
+            "filter": [
+                "all",
+                ["<=", ["get", "admin_level"], 1],
+                ["==", ["get", "admin_level"], 0],
+                ["==", ["get", "disputed"], "true"],
+                ["==", ["get", "maritime"], "false"],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {"line-join": "round"},
+            "paint": {
+                "line-dasharray": [1.5, 1.5],
+                "line-color": "hsl(62, 100%, 54%)",
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    3,
+                    0.5,
+                    10,
+                    2
+                ]
+            }
+        },
+        {
+            "id": "water",
+            "type": "fill",
+            "metadata": {"mapbox:group": "3a0aa18c08026c58ff3884e256c49a15"},
+            "source": "composite",
+            "source-layer": "water",
+            "layout": {},
+            "paint": {"fill-color": "hsl(173, 60%, 82%)"}
+        },
+        {
+            "id": "waterways",
+            "type": "line",
+            "metadata": {"mapbox:group": "3a0aa18c08026c58ff3884e256c49a15"},
+            "source": "composite",
+            "source-layer": "waterway",
+            "minzoom": 8,
+            "layout": {
+                "line-cap": ["step", ["zoom"], "butt", 11, "round"],
+                "line-join": "round"
+            },
+            "paint": {
+                "line-color": "#fbd308",
+                "line-width": [
+                    "interpolate",
+                    ["exponential", 1.3],
+                    ["zoom"],
+                    8.5,
+                    0.1,
+                    20,
+                    8
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    8,
+                    0,
+                    8.5,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "waterway-label",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 12,
+            "filter": [
+                "all",
+                [
+                    "match",
+                    ["get", "class"],
+                    ["canal", "river", "stream"],
+                    true,
+                    false
+                ],
+                ["match", ["get", "class"], ["canal", "river"], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "symbol-placement": "line",
+                "text-max-angle": 30,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    13,
+                    12,
+                    18,
+                    16
+                ]
+            },
+            "paint": {"text-color": "#006b66"}
+        },
+        {
+            "id": "water-label",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 5,
+            "filter": [
+                "all",
+                ["<", ["get", "sizerank"], 13],
+                [
+                    "match",
+                    ["get", "class"],
+                    ["reservoir", "water"],
+                    true,
+                    false
+                ],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-max-width": 7,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    13,
+                    14,
+                    18,
+                    18
+                ],
+                "text-rotation-alignment": "viewport"
+            },
+            "paint": {"text-color": "#006b66"}
+        },
+        {
+            "id": "marine-line-small",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 3,
+            "maxzoom": 10,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "LineString"],
+                [">=", ["get", "sizerank"], 7],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-line-height": 1.3,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    3,
+                    13,
+                    6,
+                    16
+                ],
+                "symbol-spacing": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    4,
+                    100,
+                    6,
+                    400
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "symbol-placement": "line",
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-letter-spacing": 0.1,
+                "text-max-width": 5
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "marine-point-small",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 3,
+            "maxzoom": 10,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "Point"],
+                [">=", ["get", "sizerank"], 7],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-max-width": 5,
+                "text-letter-spacing": 0.1,
+                "text-line-height": 1.3,
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    3,
+                    13,
+                    6,
+                    16
+                ]
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "marine-line-medium",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 2,
+            "maxzoom": 8,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "LineString"],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "sizerank"], [3, 4, 5, 6], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-line-height": 1.3,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    2,
+                    14,
+                    5,
+                    20
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "symbol-placement": "line",
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-letter-spacing": 0.15,
+                "text-max-width": 5
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "marine-point-medium",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 2,
+            "maxzoom": 8,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "Point"],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "sizerank"], [3, 4, 5, 6], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-max-width": 5,
+                "text-letter-spacing": 0.15,
+                "text-line-height": 1.3,
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    2,
+                    14,
+                    5,
+                    20
+                ]
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "marine-line-large",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 1,
+            "maxzoom": 5,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "LineString"],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "sizerank"], [1, 2], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-line-height": 1.3,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    1,
+                    15,
+                    4,
+                    28
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-max-width": 4,
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-letter-spacing": 0.25,
+                "symbol-placement": "line"
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "marine-point-large",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "5dcb45d90f3a834241309aec99041e69"},
+            "source": "composite",
+            "source-layer": "natural_label",
+            "minzoom": 1,
+            "maxzoom": 5,
+            "filter": [
+                "all",
+                ["==", ["geometry-type"], "Point"],
+                ["match", ["get", "class"], ["ocean", "sea"], true, false],
+                ["match", ["get", "sizerank"], [1, 2], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "to-string",
+                    ["coalesce", ["get", "name_en"], ["get", "name"]]
+                ],
+                "text-max-width": 4,
+                "text-letter-spacing": 0.25,
+                "text-line-height": 1.3,
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    1,
+                    20,
+                    4,
+                    28
+                ]
+            },
+            "paint": {
+                "text-color": "#006b66",
+                "text-halo-color": "hsla(0, 0%, 100%, 0.5)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "country-small",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "998c1d99148db5c32faa4352d198236b"},
+            "source": "composite",
+            "source-layer": "place_label",
+            "minzoom": 1,
+            "maxzoom": 10,
+            "filter": [
+                "all",
+                ["==", ["get", "class"], "country"],
+                [">=", ["get", "symbolrank"], 13],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": ["to-string", ["get", "name_en"]],
+                "text-max-width": 6,
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    4,
+                    13,
+                    9,
+                    24
+                ],
+                "text-letter-spacing": 0.1
+            },
+            "paint": {
+                "text-halo-color": "hsla(0, 0%, 0%, 0.4)",
+                "text-color": "hsl(177, 0%, 100%)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "country-medium",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "998c1d99148db5c32faa4352d198236b"},
+            "source": "composite",
+            "source-layer": "place_label",
+            "minzoom": 1,
+            "maxzoom": 8,
+            "filter": [
+                "all",
+                ["==", ["get", "class"], "country"],
+                [
+                    "match",
+                    ["get", "symbolrank"],
+                    [4, 5, 6, 7, 8, 9, 10, 11, 12],
+                    true,
+                    false
+                ],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": [
+                    "step",
+                    ["zoom"],
+                    ["to-string", ["get", "iso_3166_1"]],
+                    2,
+                    ["to-string", ["get", "name_en"]]
+                ],
+                "text-max-width": 6,
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    2,
+                    13,
+                    8,
+                    26
+                ],
+                "text-letter-spacing": 0.1
+            },
+            "paint": {
+                "text-halo-color": "hsla(0, 0%, 0%, 0.4)",
+                "text-color": "hsl(177, 0%, 100%)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "country-large",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "998c1d99148db5c32faa4352d198236b"},
+            "source": "composite",
+            "source-layer": "place_label",
+            "minzoom": 1,
+            "maxzoom": 7,
+            "filter": [
+                "all",
+                ["==", ["get", "class"], "country"],
+                ["match", ["get", "symbolrank"], [1, 2, 3], true, false],
+                ["match", ["get", "worldview"], ["all", "US"], true, false]
+            ],
+            "layout": {
+                "text-field": ["to-string", ["get", "name_en"]],
+                "text-max-width": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    0,
+                    5,
+                    3,
+                    6
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    1,
+                    18,
+                    6,
+                    28
+                ],
+                "text-letter-spacing": 0.2
+            },
+            "paint": {
+                "text-halo-color": "hsla(0, 0%, 0%, 0.4)",
+                "text-color": "hsl(177, 0%, 100%)",
+                "text-halo-width": 2
+            }
+        },
+        {
+            "id": "hpi-centr-3nhhu5 copy",
+            "type": "symbol",
+            "metadata": {"mapbox:group": "0deb8e0da15c00cad0f450c7f8fbad61"},
+            "source": "composite",
+            "source-layer": "airmerged_data-5o5xk4",
+            "layout": {
+                "text-line-height": 1,
+                "text-size": [
+                    "interpolate",
+                    ["exponential", 1.25],
+                    ["zoom"],
+                    1,
+                    8,
+                    5,
+                    10
+                ],
+                "icon-offset": [0, 0],
+                "icon-image": [
+                    "step",
+                    ["zoom"],
+                    [
+                        "step",
+                        ["get", "Air transport"],
+                        "5328710",
+                        42985.2996,
+                        "5328710"
+                    ],
+                    22,
+                    [
+                        "step",
+                        ["get", "Air transport"],
+                        "5328710",
+                        42985.2996,
+                        "5328710"
+                    ]
+                ],
+                "text-font": ["Homer Simpson Revised Regular"],
+                "icon-allow-overlap": true,
+                "text-offset": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "HPI_Happ_1"],
+                        12.8,
+                        ["literal", [0, 0.25]],
+                        44.7,
+                        ["literal", [0, 3]]
+                    ],
+                    5,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "HPI_Happ_1"],
+                        12.8,
+                        ["literal", [0, 0.6]],
+                        44.7,
+                        ["literal", [0, 2]]
+                    ]
+                ],
+                "icon-size": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    0,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "Air transport"],
+                        6033,
+                        0.04,
+                        42985.2996,
+                        0.2
+                    ],
+                    22,
+                    [
+                        "interpolate",
+                        ["linear"],
+                        ["get", "Air transport"],
+                        6033,
+                        0.12,
+                        42985.2996,
+                        0.6
+                    ]
+                ],
+                "text-anchor": "bottom",
+                "text-field": ["to-string", ["get", "country"]],
+                "text-letter-spacing": 0.2,
+                "icon-padding": 1,
+                "text-max-width": [
+                    "interpolate",
+                    ["exponential", 1],
+                    ["zoom"],
+                    0,
+                    5,
+                    3,
+                    6
+                ]
+            },
+            "paint": {
+                "text-color": "hsl(177, 91%, 83%)",
+                "text-halo-color": "hsla(0, 0%, 0%, 0.13)",
+                "text-halo-width": 2,
+                "icon-opacity": [
+                    "interpolate",
+                    ["linear"],
+                    ["get", "Air transport"],
+                    0,
+                    1,
+                    42985.2996,
+                    1
+                ]
+            }
+        }
+    ],
+    "created": "2024-03-07T09:58:25.842Z",
+    "modified": "2024-03-08T00:09:00.434Z",
+    "id": "clth21vsi00xb01oi4gdecveq",
+    "owner": "yixiaozhao",
+    "visibility": "public",
+    "protected": false,
+    "draft": false
+}
